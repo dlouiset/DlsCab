@@ -1,3 +1,19 @@
+dls_cab_user:
+    resource: "@DlsCabUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+dls_cab_core:
+    resource: "@DlsCabCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+dls_cab_cab_user:
+    resource: "@DlsCabCabUserBundle/Resources/config/routing.xml"
+    prefix:   /
+
+core:
+    resource: "@CoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

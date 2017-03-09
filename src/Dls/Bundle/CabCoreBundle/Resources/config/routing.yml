@@ -1,0 +1,3 @@
+dls_cab_core_homepage:
+    path:     /
+    defaults: { _controller: DlsCabCoreBundle:Default:index }

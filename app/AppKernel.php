@@ -1,4 +1,11 @@
 <?php
+# @Author: David LOUISET <dlouiset>
+# @Date:   2017-02-06T14:09:50+01:00
+# @Last modified by:   dlouiset
+# @Last modified time: 2017-03-09T11:31:24+01:00
+
+
+
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
@@ -15,7 +22,11 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new AppBundle\AppBundle(),
+
+            new FOS\UserBundle\FOSUserBundle(),
+
+            new Dls\Bundle\CabCoreBundle\DlsCabCoreBundle(),
+            new Dls\Bundle\CabUserBundle\DlsCabUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
@@ -23,6 +34,8 @@ class AppKernel extends Kernel
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+
+            $bundles[] = new PUGX\GeneratorBundle\PUGXGeneratorBundle();
         }
 
         return $bundles;
