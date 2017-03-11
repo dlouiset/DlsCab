@@ -1,0 +1,32 @@
+# @Author: David LOUISET <dlouiset>
+# @Date:   2017-03-10T15:28:50+01:00
+# @Last modified by:   dlouiset
+# @Last modified time: 2017-03-10T15:38:11+01:00
+
+
+
+fos_user:
+    username:
+        already_used: L'identifiant est déjà utilisé
+        blank: Entrez un identifiant s'il vous plait
+        short: "[-Inf,Inf]L'identifiant est trop court"
+        long: "[-Inf,Inf]L'identifiant est trop long"
+    email:
+        already_used: L'adresse de courriel est déjà utilisée
+        blank: Entrez une adresse de courriel s'il vous plait
+        short: "[-Inf,Inf]L'adresse de courriel est trop courte"
+        long: "[-Inf,Inf]L'adresse de courriel est trop longue"
+        invalid: L'adresse de courriel est invalide
+    password:
+        blank: Entrez un mot de passe s'il vous plait
+        short: "[-Inf,Inf]Le mot de passe est trop court"
+        mismatch: Les deux mots de passe ne sont pas identiques
+    new_password:
+        blank: Entrez un nouveau mot de passe s'il vous plait
+        short: "[-Inf,Inf]Le nouveau mot de passe est trop court"
+    current_password:
+        invalid: Le mot de passe est invalide
+    group:
+        blank: Entrez un nom s'il vous plait
+        short: "[-Inf,Inf]Le nom est trop court"
+        long: "[-Inf,Inf]Le nom est trop long"

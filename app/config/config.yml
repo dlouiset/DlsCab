@@ -1,7 +1,7 @@
 # @Author: David LOUISET <dlouiset>
 # @Date:   2017-02-06T14:09:50+01:00
 # @Last modified by:   dlouiset
-# @Last modified time: 2017-03-09T12:07:31+01:00
+# @Last modified time: 2017-03-11T13:40:19+01:00
 
 
 
@@ -41,9 +41,9 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-    form:
-        # resources: ['bootstrap_3_layout.html.twig']
-        resources: ['bootstrap_3_horizontal_layout.html.twig']
+    form_themes:
+        # - bootstrap_3_layout.html.twig
+        - bootstrap_3_horizontal_layout.html.twig
 
 # Doctrine Configuration
 doctrine:
@@ -79,7 +79,9 @@ swiftmailer:
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
-    user_class: Dls\Bundle\CabCoreBundle\Entity\User
+    user_class: Dls\Bundle\CabUserBundle\Entity\User
     from_email:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"
+    group:
+        group_class: Dls\Bundle\CabUserBundle\Entity\Group

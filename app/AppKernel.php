@@ -2,7 +2,7 @@
 # @Author: David LOUISET <dlouiset>
 # @Date:   2017-02-06T14:09:50+01:00
 # @Last modified by:   dlouiset
-# @Last modified time: 2017-03-09T11:31:24+01:00
+# @Last modified time: 2017-03-09T14:35:11+01:00
 
 
 
@@ -25,6 +25,7 @@ class AppKernel extends Kernel
 
             new FOS\UserBundle\FOSUserBundle(),
 
+            new AppBundle\AppBundle(),
             new Dls\Bundle\CabCoreBundle\DlsCabCoreBundle(),
             new Dls\Bundle\CabUserBundle\DlsCabUserBundle(),
         );
