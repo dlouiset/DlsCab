@@ -1,0 +1,44 @@
+# @Author: David LOUISET <dlouiset>
+# @Date:   2017-03-18T15:19:59+01:00
+# @Last modified by:   dlouiset
+# @Last modified time: 2017-03-18T15:47:30+01:00
+
+
+
+dls_cab_mission_homepage:
+    path:     /
+    defaults: { _controller: DlsCabMissionBundle:Default:index }
+
+dls_cab_mission_index:
+    path:      /{page}
+    defaults:
+        _controller: DlsCabMissionBundle:Mission:index
+        page:        1
+    requirements:
+        page: \d*
+
+dls_cab_mission_view:
+    path:      /mission/{id}
+    defaults:
+        _controller: DlsCabMissionBundle:Mission:view
+    requirements:
+        id: \d+
+
+dls_cab_mission_new:
+    path:      /new
+    defaults:
+        _controller: DlsCabMissionBundle:Mission:new
+
+dls_cab_mission_edit:
+    path:      /edit/{id}
+    defaults:
+        _controller: DlsCabMissionBundle:Mission:edit
+    requirements:
+        id: \d+
+
+dls_cab_mission_delete:
+    path:      /delete/{id}
+    defaults:
+        _controller: DlsCabMissionBundle:Mission:delete
+    requirements:
+        id: \d+

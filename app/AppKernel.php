@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new Dls\Bundle\CabCoreBundle\DlsCabCoreBundle(),
             new Dls\Bundle\CabUserBundle\DlsCabUserBundle(),
+            new Dls\Bundle\CabMissionBundle\DlsCabMissionBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
