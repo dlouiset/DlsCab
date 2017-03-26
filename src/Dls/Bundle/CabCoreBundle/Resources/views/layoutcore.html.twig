@@ -1,0 +1,114 @@
+<!--
+@Author: David LOUISET <dlouiset>
+@Date:   2017-03-10T16:19:14+01:00
+@Last modified by:   dlouiset
+@Last modified time: 2017-03-11T12:05:30+01:00
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{% block title %}Gestion d'affaire - Merci d'utiliser DlsCab{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+
+    <body>
+
+        <div class="row">
+            <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+            <nav class="col-lg-2 col-md-3 hidden-xs-down bg-faded">
+                <nav class="navbar navbar-fixed-top" id="dlscabmenu">
+                    <!-- put your nav bar here -->
+                </nav>
+
+                <div class="container">
+                    <ul class="list-group" id="menu">
+                        <li class="nav-item">
+                            <a class="list-group-item active" href="{{ path('fos_user_security_login') }}">Tableau de bord</a>
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('dls_cab_mission_index') }}">Accueil</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="list-group-item" href="{{ path('fos_user_security_login') }}">Clients</a>
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('dls_cab_mission_index') }}">Toutes les clients</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('dls_cab_mission_new') }}">Ajouter un client</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="list-group-item" href="{{ path('fos_user_security_login') }}">Missions</a>
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('dls_cab_mission_index') }}">Toutes les affaires</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('dls_cab_mission_new') }}">Ajouter une affaire</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="list-group-item" href="{{ path('dls_cab_mission_index') }}">Documents</a>
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('dls_cab_mission_index') }}">Bibliothèque</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('dls_cab_mission_new') }}">Ajouter un document</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="list-group-item">Outils</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="list-group-item">Réglages</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+
+            <div id="main" class="col-lg-10 col-md-9">
+                <nav class="navbar navbar-fixed-top" id="actionmenu">
+                    <!-- put your nav bar here -->
+                </nav>
+
+                <div class="container" id="content" tabindex="-1">
+
+                    {% block content '' %}
+
+                    <footer class="fixed-bottom">
+                        <p>Merci de faire de DlsCab votre outil de gestion d'affaire -  © {{ 'now'|date('Y') }} - Version 1.0</p>
+                    </footer>
+                </div>
+            </div>
+
+        </div>
+
+
+        {% block javascripts %}
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        {% endblock %}
+
+    </body>
+
+</html>

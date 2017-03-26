@@ -1,0 +1,25 @@
+{% extends "DlsCabMissionBundle::layout.html.twig" %}
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block dlscabmission_content %}
+
+  <h2>Liste des affaires</h2>
+
+  <ul>
+    {% for affair in listAffairs %}
+      <li>
+        <a href="{{ path('dls_cab_mission_view', {'id': affair.id}) }}">
+          {{ affair.title }}
+        </a>
+        par {{ affair.author }},
+        le {{ affair.date|date('d/m/Y') }}
+      </li>
+    {% else %}
+      <li>Pas (encore !) d'affaires</li>
+    {% endfor %}
+  </ul>
+
+{% endblock dlscabmission_content %}

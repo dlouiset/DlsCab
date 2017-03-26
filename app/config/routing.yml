@@ -1,12 +1,12 @@
 # @Author: David LOUISET <dlouiset>
 # @Date:   2017-02-06T14:09:50+01:00
 # @Last modified by:   dlouiset
-# @Last modified time: 2017-03-18T15:22:07+01:00
+# @Last modified time: 2017-03-26T14:18:41+02:00
 
 
-dls_cab_core:
-    resource: "@DlsCabCoreBundle/Resources/config/routing.yml"
-    prefix:   /
+#dls_cab_core:
+#    resource: "@DlsCabCoreBundle/Resources/config/routing.yml"
+#    prefix:   /
 
 dls_cab_user:
     resource: "@DlsCabUserBundle/Resources/config/routing.yml"
@@ -14,7 +14,7 @@ dls_cab_user:
 
 dls_cab_mission:
     resource: "@DlsCabMissionBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /mission/
 
 app:
     resource: "@AppBundle/Controller/"
