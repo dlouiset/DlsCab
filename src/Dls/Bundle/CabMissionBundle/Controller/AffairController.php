@@ -2,7 +2,7 @@
 # @Author: David LOUISET <dlouiset>
 # @Date:   2017-03-25T11:05:28+01:00
 # @Last modified by:   dlouiset
-# @Last modified time: 2017-03-25T21:05:59+01:00
+# @Last modified time: 2017-03-30T14:42:41+02:00
 
 
 
@@ -26,8 +26,9 @@ class AffairController extends Controller
       throw new NotFoundHttpException('Page "'.$page.'" inexistante.');
     }
 
-    // Ici, on récupérera la liste des annonces, puis on la passera au template
-    // Notre liste d'annonce en dur
+    // Ici, on récupérera la liste des affaires, puis on la passera au template
+
+    // Notre liste d'affaire en dur
     $listAffairs = array(
           array(
             'title'   => 'Recherche développpeur Symfony',
@@ -57,10 +58,19 @@ class AffairController extends Controller
 
   public function viewAction($id)
   {
-    // Ici, on récupérera l'annonce correspondante à l'id $id
+    // Ici, on récupérera l'affaire correspondante à l'id $id
+
+    // Notre affaire en dur
+    $affair = array(
+          'title'   => 'Recherche développpeur Symfony2',
+          'id'      => $id,
+          'author'  => 'Alexandre',
+          'content' => 'Nous recherchons un développeur Symfony2 débutant sur Lyon. Blabla…',
+          'date'    => new \Datetime()
+        );
 
     return $this->render('DlsCabMissionBundle:Affair:view.html.twig', array(
-      'id' => $id
+      'affair' => $affair
     ));
   }
 
@@ -74,7 +84,7 @@ class AffairController extends Controller
 
       $request->getSession()->getFlashBag()->add('notice', 'Affaire bien enregistrée.');
 
-      // Puis on redirige vers la page de visualisation de cettte annonce
+      // Puis on redirige vers la page de visualisation de cette affaire
       return $this->redirectToRoute('dls_cab_mission_view', array('id' => 5));
     }
 
@@ -84,7 +94,7 @@ class AffairController extends Controller
 
   public function editAction($id, Request $request)
   {
-    // Ici, on récupérera l'annonce correspondante à $id
+    // Ici, on récupérera l'affaire correspondante à $id
 
     // Même mécanisme que pour l'ajout
     if ($request->isMethod('POST')) {
@@ -93,15 +103,41 @@ class AffairController extends Controller
       return $this->redirectToRoute('dls_cab_mission_view', array('id' => 5));
     }
 
-    return $this->render('DlsCabMissionBundle:Affair:edit.html.twig');
+    // Notre affaire en dur
+    $advert = array(
+         'title'   => 'Recherche développpeur Symfony',
+         'id'      => $id,
+         'author'  => 'Alexandre',
+         'content' => 'Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…',
+         'date'    => new \Datetime()
+       );
+
+    return $this->render('DlsCabMissionBundle:Affair:edit.html.twig', array(
+      'advert' => $advert
+    ));
   }
 
   public function deleteAction($id)
   {
-    // Ici, on récupérera l'annonce correspondant à $id
+    // Ici, on récupérera l'affaire correspondant à $id
 
-    // Ici, on gérera la suppression de l'annonce en question
+    // Ici, on gérera la suppression de l'affaire en question
 
     return $this->render('DlsCabMissionBundle:Affair:delete.html.twig');
+  }
+
+  public function menuAction($limit)
+  {
+    // On fixe en dur une liste ici, bien entendu par la suite on la récupérera depuis la BDD !
+    $listAdverts = array(
+      array('id' => 2, 'title' => 'Recherche développeur Symfony'),
+      array('id' => 5, 'title' => 'Mission de webmaster'),
+      array('id' => 9, 'title' => 'Offre de stage webdesigner')
+    );
+
+    return $this->render('DlsCabMissionBundle:Affair:menu.html.twig', array(
+      // Tout l'intérêt est ici : le contrôleur passe les variables nécessaires au template !
+      'listAffairs' => $listAffairs
+    ));
   }
 }

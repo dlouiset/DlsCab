@@ -1,0 +1,25 @@
+{% extends "DlsCabMissionBundle::layout.html.twig" %}
+
+{% block title %}
+Créer une affaire - {{ parent() }}
+{% endblock %}
+
+{% block dlscabmission_content %}
+
+<h3>Créer une affaire</h3>
+
+{{ include("DlsCabMissionBundle:Affair:form.html.twig") }}
+
+<p>
+    Vous créez une nouvelle annonce.
+</p>
+
+<p>
+    <a class="btn btn-secondary" href="{{ path('dls_cab_mission_index') }}" role="button">
+    <i class="fa fa-chevron-left"></i>
+    Retour à l'accueil
+    </a>
+</p>
+<hr>
+
+{% endblock dlscabmission_content %}

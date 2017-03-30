@@ -1,0 +1,11 @@
+{# Liste d'affaires - Snippet : template sans héritage #}
+
+<ul class="nav nav-pills flex-column">
+  {% for affair in listAffairs %}
+    <li class="nav-item">
+      <a class="nav-link" href="{{ path('dls_cab_mission_view', {'id': affair.id}) }}">
+        {{ affair.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

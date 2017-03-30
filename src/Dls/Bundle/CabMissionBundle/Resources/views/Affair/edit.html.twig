@@ -1,0 +1,26 @@
+{% extends "DlsCabMissionBundle::layout.html.twig" %}
+
+{% block title %}
+Modifier une affaire - {{ parent() }}
+{% endblock %}
+
+{% block dlscabmission_content %}
+
+<h3>Modifier une affaire</h3>
+
+{{ include("DlsCabMissionBundle:Affair:form.html.twig") }}
+
+<p>
+    Vous éditez une annonce déjà existante, merci de ne pas changer
+    l'esprit général de l'annonce déjà publiée.
+</p>
+
+<p>
+    <a class="btn btn-secondary" href="{{ path('dls_cab_mission_view', {'id': advert.id}) }}" role="button">
+    <i class="fa fa-chevron-left"></i>
+    Retour à l'annonce
+    </a>
+</p>
+<hr>
+
+{% endblock dlscabmission_content %}

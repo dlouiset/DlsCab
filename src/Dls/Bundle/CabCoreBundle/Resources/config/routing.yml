@@ -1,4 +1,15 @@
 # @Author: David LOUISET <dlouiset>
 # @Date:   2017-03-09T11:28:04+01:00
 # @Last modified by:   dlouiset
-# @Last modified time: 2017-03-26T14:20:03+02:00
+# @Last modified time: 2017-03-30T14:22:54+02:00
+
+
+dls_cab_core_home:
+    path: /
+    defaults:
+        _controller: DlsCabCoreBundle:Core:index
+
+dls_cab_core_contact:
+    path: /contact
+    defaults:
+        _controller: DlscabCoreBundle:Core:contact

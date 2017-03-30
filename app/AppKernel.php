@@ -2,7 +2,7 @@
 # @Author: David LOUISET <dlouiset>
 # @Date:   2017-02-06T14:09:50+01:00
 # @Last modified by:   dlouiset
-# @Last modified time: 2017-03-09T14:35:11+01:00
+# @Last modified time: 2017-03-28T18:23:41+02:00
 
 
 
@@ -38,6 +38,7 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
 
             $bundles[] = new PUGX\GeneratorBundle\PUGXGeneratorBundle();
+            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
         }
 
         return $bundles;

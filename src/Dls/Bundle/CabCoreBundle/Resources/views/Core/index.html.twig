@@ -1,0 +1,38 @@
+{% extends "DlsCabCoreBundle::layoutcore.html.twig" %}
+
+{% block title %}
+  Tableau de bord - {{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+    {# On définit un titre #}
+    <h1>Tableau de bord</h1>
+
+    <hr>
+
+    {# On affiche tous les messages flash dont le nom est « info » #}
+    {% for message in app.session.flashbag.get('info') %}
+    <div class="alert alert-info" role="alert">Message flash : {{ message }}</div>
+    {% endfor %}
+
+    {# On pourra définir des blocs, que les vues du bundle pourront remplir #}
+    {# block dlscabcore_content1, dlscabcore_content2, dlscabcore_content3, ...  #}
+    {# endblock #}
+
+    {# Pour afficher les dernières affaires, on réutilise le contrôleur menu du CabMissionBundle #}
+    <h3>Dernières affaires</h3>
+    {{ render(controller("DlsCabMissionBundle:Affair:menu", {'limit': 3})) }}
+
+    <hr>
+
+    <h3>Derniers messages sur le forum (hypothétique)</h3>
+    <p>
+      {# Ici, on devrait utiliser un contrôleur d'un éventuel ForumBundle pour afficher les derniers posts sur le forum,
+         ce n'est pas le sujet ici #}
+      Bla bla bla...
+    </p>
+
+    <hr>
+
+{% endblock %}

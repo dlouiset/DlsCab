@@ -1,0 +1,28 @@
+{% extends "DlsCabMissionBundle::layout.html.twig" %}
+
+{% block title %}
+Affaire - {{ parent() }}
+{% endblock %}
+
+{% block dlscabmission_content %}
+
+<h3>{{ affair.title }}</h3>
+<i>Par {{ affair.author }}, le {{ affair.date|date('d/m/Y') }}</i>
+
+<p>{{ affair.content }}</p>
+
+<a class="btn btn-secondary btn-sm" href="{{ path('dls_cab_mission_index') }}" role="button">
+<i class="fa fa-chevron-left"></i>
+Retour à la liste
+</a>
+<a class="btn btn-secondary btn-sm" href="{{ path('dls_cab_mission_edit', {'id': affair.id}) }}" role="button">
+<i class="fa fa-edit"></i>
+Modifier l'annonce
+</a>
+<a class="btn btn-danger btn-sm" href="{{ path('dls_cab_mission_delete', {'id': affair.id}) }}" role="button">
+<i class="fa fa-trash"></i>
+Supprimer l'annonce
+</a>
+<hr>
+
+{% endblock dlscabmission_content %}
