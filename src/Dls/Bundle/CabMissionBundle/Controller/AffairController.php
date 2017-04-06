@@ -2,7 +2,7 @@
 # @Author: David LOUISET <dlouiset>
 # @Date:   2017-03-25T11:05:28+01:00
 # @Last modified by:   dlouiset
-# @Last modified time: 2017-03-30T14:42:41+02:00
+# @Last modified time: 2017-04-05T18:32:52+02:00
 
 
 
@@ -104,7 +104,7 @@ class AffairController extends Controller
     }
 
     // Notre affaire en dur
-    $advert = array(
+    $affair = array(
          'title'   => 'Recherche développpeur Symfony',
          'id'      => $id,
          'author'  => 'Alexandre',
@@ -113,7 +113,7 @@ class AffairController extends Controller
        );
 
     return $this->render('DlsCabMissionBundle:Affair:edit.html.twig', array(
-      'advert' => $advert
+      'affair' => $affair
     ));
   }
 
@@ -129,7 +129,7 @@ class AffairController extends Controller
   public function menuAction($limit)
   {
     // On fixe en dur une liste ici, bien entendu par la suite on la récupérera depuis la BDD !
-    $listAdverts = array(
+    $listAffairs = array(
       array('id' => 2, 'title' => 'Recherche développeur Symfony'),
       array('id' => 5, 'title' => 'Mission de webmaster'),
       array('id' => 9, 'title' => 'Offre de stage webdesigner')
